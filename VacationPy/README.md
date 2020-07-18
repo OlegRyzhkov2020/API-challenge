@@ -1,4 +1,4 @@
-# API-challenge
+# API-challenge VacationPy Case
 
 Homework Assignment, Data Science and Visualization Boot Camp (Northwestern University)
 
@@ -9,7 +9,7 @@ Homework Assignment, Data Science and Visualization Boot Camp (Northwestern Univ
 ![GitHub watchers](https://img.shields.io/github/watchers/OlegRyzhkov2020/api-challenge?label=Watch&style=social)
 ![GitHub followers](https://img.shields.io/github/followers/OlegRyzhkov2020?label=Follow&style=social)
 
-![final_map](images/world_map.png)
+![final_map](../images/hotel_cities.png)
 
 ## Contacts
 [Find Me on

@@ -1,4 +1,6 @@
 config.py
+.ipynb_checkpoints
+__pycache__
 WeatherPy/.ipynb_checkpoints
 VacationPy/.ipynb_checkpoints
 WeatherPy/__pycache__

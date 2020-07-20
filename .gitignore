@@ -1,8 +1,7 @@
 config.py
 .ipynb_checkpoints
 __pycache__
-WeatherPy/.ipynb_checkpoints
-VacationPy/.ipynb_checkpoints
+*/.ipynb_checkpoints
 WeatherPy/__pycache__
 VacationPy/__pycache__
 .DS_Store

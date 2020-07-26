@@ -92,17 +92,17 @@ class DataAnalysis():
         (slope, intercept, rvalue, pvalue, stderr) = linregress(self.x, self.y)
         self.rsq_value = round(rvalue**2, 4)
         self.regress_values = self.x * slope + intercept
-        self.line_eq = "y = " + str(round(slope,2)) + "x + " + str(round(intercept,2))
+        self.line_eq = "y = " + str(round(slope,4)) + "x + " + str(round(intercept,2))
         return self.regress_values, self.line_eq, self.rsq_value
     
     # Define scatter plot method
     def scat_plot(self):
         regress_values, line_eq, rsq_value = self.lin_regr()
         x_axes = np.median(self.x)
-        y_axes = np.median(self.y)-20
+        y_axes = np.median(self.y)+6
         plt.scatter(self.x, self.y)
         plt.plot(self.x, regress_values, "r-")
         plt.annotate(line_eq, (x_axes, y_axes), fontsize=15,color="red")
-        plt.title(f'{self.x.name} vs Latitude {plot_date} R-squared is: {rsq_value}', size=14)
+        plt.title(f'{self.x.name} vs {self.y.name} R-squared is: {rsq_value}', size=14)
         plt.xlabel(self.x.name)
-        plt.ylabel('Latitude')
+        plt.ylabel(self.y.name)

@@ -47,6 +47,11 @@ Data Science and Visualization Boot Camp (Northwestern University)
 
 ## Statistical Analysis
 
+![corr matrix](images/corr_matrix_2011.png)
+
+instead of just describing the strength of the relationship between crime rate and poverty rate it would be nice to define the relationship itself using an equation. Regression analysis does just that. The code and plot below show the regression analysis for two chosen variables with the highest correlation coefficients: poverty rate and location by latitude.
+
+
 ```python
 # Regression Analysiss for 2011
 crime_pov = DataAnalysis(expl_data_2011['Crime Rate'], expl_data_2011['Poverty Rate'])
@@ -62,6 +67,17 @@ crime_lat.scat_plot()
 ```
 
 ![analysis](images/simple_regression.png)
+
+The slope coefficients are numerically close to zero - and this is a matter of measurements since we used thousands in the adjusted crime rate. The r-squared coefficient for the latitude model close to 0.20, which means that only about 20% of variation is explained by our equation and is considered to be a relatively weak model. So, we can do an Anova test and define the null hypothesis as there is no difference between southern and northern states.
+
+```python
+group1 = expl_data_2011[expl_data_2011["Geo"] == "South"]["Crime Rate"]
+group2 = expl_data_2011[expl_data_2011["Geo"] == "North"]["Crime Rate"]
+stats.f_oneway(group1, group2)
+```
+![anova_test](images/anova_test_result.png)
+
+Based on the result with an F-test being much greater than 4 and the p-value being much lower than 0.05 we reject the null hypothesis and can use it to prove the observation trend: the crime rate at the state level is affected by poverty rate and climate factor (latitude).
 
 ## Contacts
 [Find Me on
